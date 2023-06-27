@@ -1,0 +1,14 @@
+//
+// Created by giacomo on 27/06/23.
+//
+
+#ifndef LAB_PROGRAMMAZIONE_2023_DATEDISPLAY_H
+#define LAB_PROGRAMMAZIONE_2023_DATEDISPLAY_H
+
+
+class DateDisplay {
+
+};
+
+
+#endif //LAB_PROGRAMMAZIONE_2023_DATEDISPLAY_H

@@ -9,6 +9,8 @@
 #include <wx/sizer.h>
 
 
+#include "ClockDisplay.h"
+
 class Window : public wxFrame {
 public:
     explicit Window(const wxString& title);
