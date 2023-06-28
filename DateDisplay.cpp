@@ -3,3 +3,7 @@
 //
 
 #include "DateDisplay.h"
+
+void DateDisplay::update() {
+// Update the date display
+}

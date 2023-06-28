@@ -10,7 +10,8 @@
 #include "Observer.h"
 
 class DateDisplay : public Observer, public wxWindow {
-
+public:
+    virtual void update() override;
 };
 
 #endif //LAB_PROGRAMMAZIONE_2023_DATEDISPLAY_H

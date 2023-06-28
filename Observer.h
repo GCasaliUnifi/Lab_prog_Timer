@@ -6,8 +6,10 @@
 #define LAB_PROGRAMMAZIONE_2023_OBSERVER_H
 
 class Observer {
-public:
+protected:
     virtual ~Observer() = default;
+
+public:
     virtual void update() = 0;
 };
 

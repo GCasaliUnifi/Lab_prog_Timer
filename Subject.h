@@ -8,11 +8,12 @@
 #include "Observer.h"
 
 class Subject {
-public:
+protected:
     virtual ~Subject() = default;
-    virtual void addObserver(Observer *o) = 0;
-    virtual void removeObserver(Observer *o) = 0;
-    virtual void notify() = 0;
+public:
+    virtual void addObserver(Observer* o) = 0;
+    virtual void removeObserver(Observer* o) = 0;
+    virtual void notifyObservers() const = 0;
 };
 
 #endif //LAB_PROGRAMMAZIONE_2023_SUBJECT_H

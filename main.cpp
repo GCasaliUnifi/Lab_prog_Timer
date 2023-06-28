@@ -4,14 +4,14 @@
 #include <wx/wx.h>
 #include "Window.h"
 
-class MyTimer : public wxApp {
+class MyApp : public wxApp {
 public:
     virtual bool OnInit();
 };
 
-wxIMPLEMENT_APP(MyTimer);
+wxIMPLEMENT_APP(MyApp);
 
-bool MyTimer::OnInit() {
+bool MyApp::OnInit() {
     Window * appWindow = new Window(wxT("Timer"));
     appWindow->Show(true);
     return true;
