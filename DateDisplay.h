@@ -5,10 +5,12 @@
 #ifndef LAB_PROGRAMMAZIONE_2023_DATEDISPLAY_H
 #define LAB_PROGRAMMAZIONE_2023_DATEDISPLAY_H
 
+#include <wx/window.h>
 
-class DateDisplay {
+#include "Observer.h"
+
+class DateDisplay : public Observer, public wxWindow {
 
 };
-
 
 #endif //LAB_PROGRAMMAZIONE_2023_DATEDISPLAY_H

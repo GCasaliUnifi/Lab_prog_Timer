@@ -6,11 +6,11 @@
 #define LAB_PROGRAMMAZIONE_2023_CLOCKDISPLAY_H
 
 
-#include <wx/frame.h>
+#include <wx/window.h>
 
 #include "Observer.h"
 
-class ClockDisplay : public Observer, public wxFrame {
+class ClockDisplay : public Observer, public wxWindow {
 public:
     virtual void update() override;
 };
