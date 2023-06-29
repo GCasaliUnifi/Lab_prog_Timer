@@ -4,6 +4,10 @@
 
 #include "SubjectTimer.h"
 
+SubjectTimer::SubjectTimer() {
+    this->currentDateTime = wxDateTime::Now();
+}
+
 void SubjectTimer::addObserver(Observer *o) {
     this->observers.push_back(o);
 }
@@ -23,4 +27,28 @@ void SubjectTimer::notifyObservers() const {
 
 void SubjectTimer::Notify() {
     this->notifyObservers();
+}
+
+unsigned short SubjectTimer::getHour() const {
+    return this->currentDateTime.GetHour();
+}
+
+unsigned short SubjectTimer::getMinute() const {
+    return this->currentDateTime.GetMinute();
+}
+
+unsigned short SubjectTimer::getSecond() const {
+    return this->currentDateTime.GetSecond();
+}
+
+unsigned short SubjectTimer::getDay() const {
+    return this->currentDateTime.GetDay();
+}
+
+unsigned short SubjectTimer::getMonth() const {
+    return this->currentDateTime.GetMonth();
+}
+
+int SubjectTimer::getYear() const {
+    return this->currentDateTime.GetYear();
 }

@@ -9,11 +9,15 @@
 #include <wx/sizer.h>
 
 
+#include "SubjectTimer.h"
 #include "ClockDisplay.h"
+#include "DateDisplay.h"
 
 class Window : public wxFrame {
 public:
     explicit Window(const wxString& title);
+private:
+    SubjectTimer* dateTimeData;
 };
 
 

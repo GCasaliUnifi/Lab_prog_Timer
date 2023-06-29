@@ -7,12 +7,22 @@
 
 
 #include <wx/window.h>
+#include <wx/sizer.h>
+#include <wx/stattext.h>
 
 #include "Observer.h"
+#include "SubjectTimer.h"
 
 class ClockDisplay : public Observer, public wxWindow {
 public:
-    virtual void update() override;
+    ClockDisplay(SubjectTimer *dateTimeData, wxWindow* parent, wxWindowID id = wxID_ANY, const wxPoint& pos = wxDefaultPosition,
+                 const wxSize& size = wxDefaultSize, long style = 0, const wxString& name = wxPanelNameStr);
+
+    void update() override;
+private:
+    SubjectTimer* dateTimeData;
+    wxStaticText* clockDisplayTMP;
+    unsigned short hour, minute, second;
 };
 
 
