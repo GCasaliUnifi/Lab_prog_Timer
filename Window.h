@@ -7,7 +7,8 @@
 
 #include<wx/frame.h>
 #include <wx/sizer.h>
-
+#include <wx/menu.h>
+#include <wx/msgdlg.h>
 
 #include "SubjectTimer.h"
 #include "ClockDisplay.h"
@@ -16,6 +17,8 @@
 class Window : public wxFrame {
 public:
     explicit Window(const wxString& title);
+
+    void OnAboutInfo(wxCommandEvent &ev);
 private:
     SubjectTimer* dateTimeData;
 };

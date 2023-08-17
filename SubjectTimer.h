@@ -35,6 +35,8 @@ public:
 private:
     std::vector<Observer*> observers;
     wxDateTime currentDateTime;
+    // TODO aggiungi un wxTimeSpan per usarlo per il timer + crea classe TimerDisplay come observer.
+    //  Il timer dovrebbe aggornare il TimeSpan dentro Notify prima di notificare gli observer
 };
 
 
