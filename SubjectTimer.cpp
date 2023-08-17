@@ -26,6 +26,7 @@ void SubjectTimer::notifyObservers() const {
 }
 
 void SubjectTimer::Notify() {
+    this->currentDateTime = wxDateTime::Now();
     this->notifyObservers();
 }
 

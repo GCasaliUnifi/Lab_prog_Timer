@@ -5,10 +5,11 @@
 #ifndef LAB_PROGRAMMAZIONE_2023_CLOCKDISPLAY_H
 #define LAB_PROGRAMMAZIONE_2023_CLOCKDISPLAY_H
 
+#include <iostream>
 
 #include <wx/window.h>
 #include <wx/sizer.h>
-#include <wx/stattext.h>
+#include <wx/textctrl.h>
 
 #include "Observer.h"
 #include "SubjectTimer.h"
@@ -21,7 +22,7 @@ public:
     void update() override;
 private:
     SubjectTimer* dateTimeData;
-    wxStaticText* clockDisplayTMP;
+    wxTextCtrl* clockDisplayTMP;
     unsigned short hour, minute, second;
 };
 

@@ -15,7 +15,7 @@ ClockDisplay::ClockDisplay(SubjectTimer *dateTimeData, wxWindow *parent, wxWindo
     auto *clockSizer = new wxBoxSizer(wxVERTICAL);
     auto *firstSizer = new wxBoxSizer(wxHORIZONTAL);
 
-    clockDisplayTMP = new wxStaticText(this, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxALIGN_CENTRE);
+    clockDisplayTMP = new wxTextCtrl(this, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxTE_READONLY);
 
     firstSizer->Add(clockDisplayTMP, 1, wxALL, 5);
     clockSizer->Add(firstSizer, 1, wxEXPAND, 5);
@@ -27,6 +27,6 @@ void ClockDisplay::update() {
     this->minute = dateTimeData->getMinute();
     this->second = dateTimeData->getSecond();
 
-    this->clockDisplayTMP->SetLabel(wxString::Format(wxT("%d:%d:%d"), this->hour, this->minute, this->second));
-    std::cout << "ClockDisplay::update()" << std::endl;
+    this->clockDisplayTMP->SetValue(wxString::Format(wxT("%d:%d:%d"), this->hour, this->minute, this->second));
+    std::cout << "ClockDisplay::update() = " << this->hour << ":" << this->minute << ":" << this->second << std::endl;
 }

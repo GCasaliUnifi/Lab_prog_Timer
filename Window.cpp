@@ -18,10 +18,11 @@ Window::Window(const wxString &title) : wxFrame(nullptr, wxID_ANY, title, wxDefa
     clockDisplaySizer->Add(clockDisplay, 1, wxALL, 5);
 
     finalSizer->Add(dateDisplaySizer, 1, wxEXPAND, 5);
+    finalSizer->Add(clockDisplaySizer, 1, wxEXPAND, 5);
     this->SetSizer(finalSizer);
     this->SetAutoLayout(true);
     this->Layout();
     finalSizer->SetSizeHints(this);
     this->Centre();
-    this->dateTimeData->Start(2000);
+    this->dateTimeData->Start(500);
 }
