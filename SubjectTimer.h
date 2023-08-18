@@ -17,6 +17,7 @@
 class SubjectTimer : public Subject, public wxTimer {
 public:
     SubjectTimer();
+    // TODO aggiungi distruttori qui e agli observer
     // Subject
     void addObserver(Observer* o) override;
     void removeObserver(Observer* o) override;

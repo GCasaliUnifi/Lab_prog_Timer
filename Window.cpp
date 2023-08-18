@@ -9,6 +9,7 @@ Window::Window(const wxString &title) : wxFrame(nullptr, wxID_ANY, title, wxDefa
     this->dateTimeData = new SubjectTimer();
     auto *dateDisplay = new DateDisplay(dateTimeData, this);
     auto *clockDisplay = new ClockDisplay(dateTimeData, this);
+    auto *timerDisplay = new TimerDisplay(dateTimeData, this);
 
     auto *menuBar = new wxMenuBar;
     auto *moreMenu = new wxMenu;
@@ -24,6 +25,7 @@ Window::Window(const wxString &title) : wxFrame(nullptr, wxID_ANY, title, wxDefa
     auto finalSizer = new wxBoxSizer(wxVERTICAL);
     auto dateDisplaySizer = new wxBoxSizer(wxHORIZONTAL);
     auto clockDisplaySizer = new wxBoxSizer(wxHORIZONTAL);
+    auto timerDisplaySizer = new wxBoxSizer(wxHORIZONTAL);
 
     this->dateTimeData->Start(500);
 
@@ -33,9 +35,11 @@ Window::Window(const wxString &title) : wxFrame(nullptr, wxID_ANY, title, wxDefa
     // --------------------------------- Sizers ---------------------------------
     dateDisplaySizer->Add(dateDisplay, 1, wxALL, 5);
     clockDisplaySizer->Add(clockDisplay, 1, wxALL, 5);
+    timerDisplaySizer->Add(timerDisplay, 1, wxALL, 5);
 
     finalSizer->Add(dateDisplaySizer, 1, wxEXPAND, 5);
     finalSizer->Add(clockDisplaySizer, 1, wxEXPAND, 5);
+    finalSizer->Add(timerDisplaySizer, 1, wxEXPAND, 5);
     this->SetSizer(finalSizer);
     this->SetAutoLayout(true);
     this->Layout();

@@ -13,6 +13,7 @@
 #include "SubjectTimer.h"
 #include "ClockDisplay.h"
 #include "DateDisplay.h"
+#include "TimerDisplay.h"
 
 class Window : public wxFrame {
 public:
