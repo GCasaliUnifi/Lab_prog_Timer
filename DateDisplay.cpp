@@ -24,9 +24,10 @@ DateDisplay::DateDisplay(SubjectTimer *dateTimeData, wxWindow *parent, wxWindowI
 
 void DateDisplay::update() {
     this->day = dateTimeData->getDay();
+    this->nameOfDay = dateTimeData->getDayName();
     this->month = dateTimeData->getMonth();
     this->year = dateTimeData->getYear();
 
-    this->dateDisplayTMP->SetValue(wxString::Format(wxT("%d/%d/%d"), this->day, this->month, this->year));
+    this->dateDisplayTMP->SetValue(wxString::Format(wxT("%s %d/%d/%d"), this->nameOfDay.c_str(), this->day, this->month, this->year));
     std::cout << "DateDisplay::update()" << std::endl;
 }

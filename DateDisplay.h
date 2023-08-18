@@ -22,7 +22,7 @@ private:
     SubjectTimer* dateTimeData;
     wxTextCtrl* dateDisplayTMP;
 
-
+    wxString nameOfDay;
     unsigned short day, month;
     int year;
 };

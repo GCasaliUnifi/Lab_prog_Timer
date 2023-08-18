@@ -29,6 +29,7 @@ public:
     unsigned short getMinute() const;
     unsigned short getSecond() const;
     unsigned short getDay() const;
+    wxString getDayName() const;
     unsigned short getMonth() const;
     int getYear() const;
 

@@ -53,3 +53,9 @@ unsigned short SubjectTimer::getMonth() const {
 int SubjectTimer::getYear() const {
     return this->currentDateTime.GetYear();
 }
+
+wxString SubjectTimer::getDayName() const {
+    wxDateTime::WeekDay weekDay = this->currentDateTime.GetWeekDay();
+    wxString dayName = wxDateTime::GetWeekDayName(weekDay);
+    return dayName;
+}
