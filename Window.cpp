@@ -9,10 +9,10 @@ Window::Window(const wxString &title) : wxFrame(nullptr, wxID_ANY, title, wxDefa
     this->dateTimeData = new SubjectTimer();
     auto *timerDisplay = new TimerDisplay(dateTimeData, this);
     auto *clockDisplay = new ClockDisplay(dateTimeData, this);
-    auto *dateDisplay = new DateDisplay(dateTimeData, this);
+    auto *dateDisplay  = new DateDisplay(dateTimeData, this);
 
-    auto *menuBar = new wxMenuBar;
-    auto *moreMenu = new wxMenu;
+    auto *menuBar   = new wxMenuBar;
+    auto *moreMenu  = new wxMenu;
     auto *aboutMenu = new wxMenu;
 
     moreMenu->Append(wxID_EXIT, wxT("&Exit"));
@@ -22,8 +22,8 @@ Window::Window(const wxString &title) : wxFrame(nullptr, wxID_ANY, title, wxDefa
     menuBar->Append(aboutMenu, wxT("&About"));
     this->SetMenuBar(menuBar);
 
-    auto finalSizer = new wxBoxSizer(wxVERTICAL);
-    auto dateDisplaySizer = new wxBoxSizer(wxHORIZONTAL);
+    auto finalSizer        = new wxBoxSizer(wxVERTICAL);
+    auto dateDisplaySizer  = new wxBoxSizer(wxHORIZONTAL);
     auto clockDisplaySizer = new wxBoxSizer(wxHORIZONTAL);
     auto timerDisplaySizer = new wxBoxSizer(wxHORIZONTAL);
 
