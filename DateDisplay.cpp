@@ -29,5 +29,4 @@ void DateDisplay::update() {
     this->year = dateTimeData->getYear();
 
     this->dateDisplayTMP->SetValue(wxString::Format(wxT("%s %d/%d/%d"), this->nameOfDay.c_str(), this->day, this->month, this->year));
-    std::cout << "DateDisplay::update()" << std::endl;
 }

@@ -9,6 +9,7 @@
 #include <wx/sizer.h>
 #include <wx/menu.h>
 #include <wx/msgdlg.h>
+#include <wx/button.h>
 
 #include "SubjectTimer.h"
 #include "ClockDisplay.h"
@@ -20,8 +21,11 @@ public:
     explicit Window(const wxString& title);
 
     void OnAboutInfo(wxCommandEvent &ev);
+    void OnButtonClick(wxCommandEvent &ev);
 private:
     SubjectTimer* dateTimeData;
+    wxButton * playButton;
+    wxButton * PauseButton;
 };
 
 

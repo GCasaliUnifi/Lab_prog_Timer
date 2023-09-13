@@ -14,10 +14,13 @@
 #include "Observer.h"
 #include "Subject.h"
 
+#define T_INTERVAL 1000 // milliseconds between timer ticks
+
 class SubjectTimer : public Subject, public wxTimer {
 public:
     SubjectTimer();
     // TODO aggiungi distruttori qui e agli observer
+
     // Subject
     void addObserver(Observer* o) override;
     void removeObserver(Observer* o) override;
@@ -34,11 +37,22 @@ public:
     unsigned short getMonth() const;
     int getYear() const;
 
+    wxString getFormattedChangingTimeSpan() const;
+
+    void flipTimerRunningStatus();
+    bool getTimerRunningStatus() const;
 private:
     std::vector<Observer*> observers;
+
     wxDateTime currentDateTime;
-    // TODO aggiungi un wxTimeSpan per usarlo per il timer + crea classe TimerDisplay come observer.
-    //  Il timer dovrebbe aggornare il TimeSpan dentro Notify prima di notificare gli observer
+    wxTimeSpan originalTimeSpan = wxTimeSpan(0, 15, 0);
+    wxTimeSpan changingTimeSpan = wxTimeSpan(0, 0, 10);
+
+    /* This below is not used to keep track of the wxTimer witch this class is derived from but to know whether
+     * the observer should be updating its value or not (has the user pressed Play? -> Update, else don't!).
+    */
+    bool isTimerRunning = true;
+    //bool isTimerPaused = false;
 };
 
 

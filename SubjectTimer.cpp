@@ -27,6 +27,14 @@ void SubjectTimer::notifyObservers() const {
 
 void SubjectTimer::Notify() {
     this->currentDateTime = wxDateTime::Now();
+    if(this->isTimerRunning) {
+        if(changingTimeSpan.IsEqualTo(wxTimeSpan(0))) {
+            this->isTimerRunning = false;
+            this->changingTimeSpan = originalTimeSpan;
+        } else {
+            changingTimeSpan -= wxTimeSpan(0,0,0, T_INTERVAL);
+        }
+    }
     this->notifyObservers();
 }
 
@@ -58,4 +66,16 @@ wxString SubjectTimer::getDayName() const {
     wxDateTime::WeekDay weekDay = this->currentDateTime.GetWeekDay();
     wxString dayName = wxDateTime::GetWeekDayName(weekDay);
     return dayName;
+}
+
+wxString SubjectTimer::getFormattedChangingTimeSpan() const {
+    return this->changingTimeSpan.Format();
+}
+
+void SubjectTimer::flipTimerRunningStatus() {
+    this->isTimerRunning = !this->isTimerRunning;
+}
+
+bool SubjectTimer::getTimerRunningStatus() const {
+    return this->isTimerRunning;
 }

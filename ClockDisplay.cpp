@@ -28,5 +28,4 @@ void ClockDisplay::update() {
     this->second = dateTimeData->getSecond();
 
     this->clockDisplayTMP->SetValue(wxString::Format(wxT("%d:%d:%d"), this->hour, this->minute, this->second));
-    std::cout << "ClockDisplay::update() = " << this->hour << ":" << this->minute << ":" << this->second << std::endl;
 }

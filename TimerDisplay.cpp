@@ -21,8 +21,7 @@ TimerDisplay::TimerDisplay(SubjectTimer *dateTimeData, wxWindow *parent, wxWindo
 }
 
 void TimerDisplay::update() {
-    this->hour = dateTimeData->getHour();
-    this->minute = dateTimeData->getMinute();
-    this->second = dateTimeData->getSecond();
-    this->timerDisplayTMP->SetValue(wxString::Format(wxT("TIMER: %d:%d:%d"), this->hour, this->minute, this->second));
+    this->timerDisplayTMP->SetValue(dateTimeData->getFormattedChangingTimeSpan());
+    Refresh();
+    Update();
 }
