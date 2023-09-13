@@ -25,7 +25,7 @@ public:
 private:
     SubjectTimer* dateTimeData;
     wxButton * playButton;
-    wxButton * PauseButton;
+    wxButton * pauseButton;
 };
 
 

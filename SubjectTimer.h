@@ -52,7 +52,7 @@ private:
      * the observer should be updating its value or not (has the user pressed Play? -> Update, else don't!).
     */
     bool isTimerRunning = true;
-    //bool isTimerPaused = false;
+    bool isTimerPaused = false;
 };
 
 
